@@ -1,0 +1,29 @@
+version: '3.2'
+services:
+  sinatra:
+    build:
+      context: ../backend
+    ports:
+      - "4567:4567"
+    networks:
+      somnet:
+        aliases:
+          - sinatra
+  node:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - ENDPOINTS=/app=http://node:3000/app;/sinatra=http://sinatra:4567/
+      - DEFAULT=/
+    networks:
+      somnet:
+        aliases:
+          - node
+    depends_on: 
+      - sinatra
+networks: 
+  somnet:
+    driver: bridge

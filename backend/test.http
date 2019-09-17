@@ -1,0 +1,21 @@
+GET http://localhost:4567/download/amused.jpg HTTP/1.1
+
+### 
+
+GET http://localhost:4567/download/bojack.png HTTP/1.1
+
+### 
+
+GET http://localhost:4567/download/cv.pdf HTTP/1.1
+
+###
+
+GET http://localhost/app/download/amused.jpg HTTP/1.1
+
+### 
+
+GET http://localhost/app/download/bojack.png HTTP/1.1
+
+### 
+
+GET http://localhost/app/download/cv.pdf HTTP/1.1
